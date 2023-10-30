@@ -5,8 +5,5 @@ import './user';
 import './activation';
 import './menu';
 import './promo';
-import './medium';
-import './post';
 import './about';
 import './contact';
-import './image';

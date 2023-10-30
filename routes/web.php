@@ -192,3 +192,33 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
         });
     });
 });
+
+/* Auto-generated admin routes */
+Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
+    Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function() {
+        Route::prefix('admin-users')->name('admin-users/')->group(static function() {
+            Route::get('/',                                             'AdminUsersController@index')->name('index');
+            Route::get('/create',                                       'AdminUsersController@create')->name('create');
+            Route::post('/',                                            'AdminUsersController@store')->name('store');
+            Route::get('/{adminUser}/edit',                             'AdminUsersController@edit')->name('edit');
+            Route::post('/bulk-destroy',                                'AdminUsersController@bulkDestroy')->name('bulk-destroy');
+            Route::post('/{adminUser}',                                 'AdminUsersController@update')->name('update');
+            Route::delete('/{adminUser}',                               'AdminUsersController@destroy')->name('destroy');
+        });
+    });
+});
+
+/* Auto-generated admin routes */
+Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
+    Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function() {
+        Route::prefix('admin-users')->name('admin-users/')->group(static function() {
+            Route::get('/',                                             'AdminUserController@index')->name('index');
+            Route::get('/create',                                       'AdminUserController@create')->name('create');
+            Route::post('/',                                            'AdminUserController@store')->name('store');
+            Route::get('/{adminUser}/edit',                             'AdminUserController@edit')->name('edit');
+            Route::post('/bulk-destroy',                                'AdminUserController@bulkDestroy')->name('bulk-destroy');
+            Route::post('/{adminUser}',                                 'AdminUserController@update')->name('update');
+            Route::delete('/{adminUser}',                               'AdminUserController@destroy')->name('destroy');
+        });
+    });
+});

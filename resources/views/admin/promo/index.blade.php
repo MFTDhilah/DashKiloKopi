@@ -52,13 +52,14 @@
 
                                         <th is='sortable' :column="'id'">{{ trans('admin.promo.columns.id') }}</th>
                                         <th is='sortable' :column="'title'">{{ trans('admin.promo.columns.title') }}</th>
+                                        <th is='sortable' :column="'description'">{{ trans('admin.promo.columns.description') }}</th>
                                         <th is='sortable' class="text-center" :column="'published_at'">{{ trans('admin.promo.columns.published_at') }}</th>
                                         <th is='sortable' :column="'enabled'">{{ trans('admin.promo.columns.enabled') }}</th>
 
                                         <th></th>
                                     </tr>
                                     <tr v-show="(clickedBulkItemsCount > 0) || isClickedAll">
-                                        <td class="bg-bulk-info d-table-cell text-center" colspan="6">
+                                        <td class="bg-bulk-info d-table-cell text-center" colspan="9">
                                             <span class="align-middle font-weight-light text-dark">{{ trans('brackets/admin-ui::admin.listing.selected_items') }} @{{ clickedBulkItemsCount }}.  <a href="#" class="text-primary" @click="onBulkItemsClickedAll('/admin/promos')" v-if="(clickedBulkItemsCount < pagination.state.total)"> <i class="fa" :class="bulkCheckingAllLoader ? 'fa-spinner' : ''"></i> {{ trans('brackets/admin-ui::admin.listing.check_all_items') }} @{{ pagination.state.total }}</a> <span class="text-primary">|</span> <a
                                                         href="#" class="text-primary" @click="onBulkItemsClickedAllUncheck()">{{ trans('brackets/admin-ui::admin.listing.uncheck_all_items') }}</a>  </span>
 
@@ -79,6 +80,7 @@
 
                                     <td>@{{ item.id }}</td>
                                         <td>@{{ item.title }}</td>
+                                        <td>@{{ item.description }}</td>
                                             <td class="text-center text-nowrap">
                                             <span v-if="item.published_at <= now">
                                                 @{{ item.published_at | datetime('DD.MM.YYYY, HH:mm') }}

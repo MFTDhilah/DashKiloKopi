@@ -37,10 +37,10 @@ class PromosController extends Controller
             $request,
 
             // set columns to query
-            ['id', 'title', 'published_at', 'enabled'],
+            ['id', 'title', 'description', 'image', 'published_at', 'enabled'],
 
             // set columns to searchIn
-            ['id', 'title', 'slug', 'description', 'image', 'promo']
+            ['id', 'title', 'slug', 'description', 'image']
         );
 
         if ($request->ajax()) {

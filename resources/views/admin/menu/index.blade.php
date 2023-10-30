@@ -81,6 +81,7 @@
 
                                     <td>@{{ item.id }}</td>
                                         <td>@{{ item.title }}</td>
+                                        <td>@{{ item.image}}</td>
                                         <td>@{{ item.price }}</td>
                                             <td class="text-center text-nowrap">
                                             <span v-if="item.published_at <= now">

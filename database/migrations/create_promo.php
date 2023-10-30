@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('slug')->unique();
             $table->string('description');
-            $table->string('image');
+            $table->text('image');
             $table->string('promo');
             $table->date('published_at')->nullable();
             $table->boolean('enabled')->default(false);

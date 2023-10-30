@@ -17,30 +17,18 @@
 <div class="form-group row align-items-center" :class="{'has-danger': errors.has('description'), 'has-success': fields.description && fields.description.valid }">
     <label for="description" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('admin.promo.columns.description') }}</label>
         <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
-        <div>
-            <wysiwyg v-model="form.description" v-validate="'required'" id="description" name="description" :config="mediaWysiwygConfig"></wysiwyg>
-        </div>
+        <input type="text" v-model="form.description" v-validate="'required'" @input="validate($event)" class="form-control" :class="{'form-control-danger': errors.has('description'), 'form-control-success': fields.description && fields.description.valid}" id="description" name="description" placeholder="{{ trans('admin.promo.columns.description') }}">
         <div v-if="errors.has('description')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('description') }}</div>
     </div>
 </div>
 
 <div class="form-group row align-items-center" :class="{'has-danger': errors.has('image'), 'has-success': fields.image && fields.image.valid }">
-    <label for="image" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('admin.promo.columns.image') }}</label>
-    <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
+    <label for="image" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('admin.menu.columns.image') }}</label>
+        <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
         <div>
-            <textarea class="form-control" v-model="form.image" v-validate="'required'" id="image" name="image"></textarea>
+            <wysiwyg v-model="form.image" v-validate="'required'" id="image" name="image" :config="mediaWysiwygConfig"></wysiwyg>
         </div>
         <div v-if="errors.has('image')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('image') }}</div>
-    </div>
-</div>
-
-<div class="form-group row align-items-center" :class="{'has-danger': errors.has('promo'), 'has-success': fields.promo && fields.promo.valid }">
-    <label for="promo" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('admin.promo.columns.promo') }}</label>
-    <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
-        <div>
-            <textarea class="form-control" v-model="form.promo" v-validate="'required'" id="promo" name="promo"></textarea>
-        </div>
-        <div v-if="errors.has('promo')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('promo') }}</div>
     </div>
 </div>
 

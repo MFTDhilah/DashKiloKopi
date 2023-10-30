@@ -3,20 +3,36 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class AdminUser extends Model
 {
-    protected $table = 'admin-user';
-
+    use SoftDeletes;
     protected $fillable = [
+        'first_name',
+        'last_name',
+        'email',
+        'password',
+        'activated',
+        'forbidden',
+        'language',
+        'last_login_at',
     
     ];
     
+    protected $hidden = [
+        'password',
+        'remember_token',
+    
+    ];
     
     protected $dates = [
+        'deleted_at',
+        'created_at',
+        'updated_at',
+        'last_login_at',
     
     ];
-    public $timestamps = false;
     
     protected $appends = ['resource_url'];
 

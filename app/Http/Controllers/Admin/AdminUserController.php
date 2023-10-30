@@ -10,6 +10,7 @@ use App\Http\Requests\Admin\AdminUser\StoreAdminUser;
 use App\Http\Requests\Admin\AdminUser\UpdateAdminUser;
 use App\Models\AdminUser;
 use Brackets\AdminListing\Facades\AdminListing;
+use Carbon\Carbon;
 use Exception;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Contracts\Routing\ResponseFactory;
@@ -37,10 +38,10 @@ class AdminUserController extends Controller
             $request,
 
             // set columns to query
-            [''],
+            ['id', 'first_name', 'last_name', 'email', 'activated', 'forbidden', 'language', 'last_login_at'],
 
             // set columns to searchIn
-            ['']
+            ['id', 'first_name', 'last_name', 'email', 'language']
         );
 
         if ($request->ajax()) {
@@ -177,7 +178,10 @@ class AdminUserController extends Controller
             collect($request->data['ids'])
                 ->chunk(1000)
                 ->each(static function ($bulkChunk) {
-                    AdminUser::whereIn('id', $bulkChunk)->delete();
+                    DB::table('adminUsers')->whereIn('id', $bulkChunk)
+                        ->update([
+                            'deleted_at' => Carbon::now()->format('Y-m-d H:i:s')
+                    ]);
 
                     // TODO your code goes here
                 });

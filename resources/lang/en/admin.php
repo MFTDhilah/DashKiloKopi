@@ -715,5 +715,80 @@ return [
         ],
     ],
 
+    'promo' => [
+        'title' => 'Promos',
+
+        'actions' => [
+            'index' => 'Promos',
+            'create' => 'New Promo',
+            'edit' => 'Edit :name',
+            'will_be_published' => 'Promo will be published at',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'title' => 'Title',
+            'slug' => 'Slug',
+            'description' => 'Description',
+            'image' => 'Image',
+            'promo' => 'Promo',
+            'published_at' => 'Published at',
+            'enabled' => 'Enabled',
+            
+        ],
+    ],
+
+    'admin-user' => [
+        'title' => 'Admin-Users',
+
+        'actions' => [
+            'index' => 'Admin-Users',
+            'create' => 'New Admin-User',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            
+        ],
+    ],
+
+    'admin-user' => [
+        'title' => 'Admin-User',
+
+        'actions' => [
+            'index' => 'Admin-User',
+            'create' => 'New Admin-User',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            
+        ],
+    ],
+
+    'admin-user' => [
+        'title' => 'Admin Users',
+
+        'actions' => [
+            'index' => 'Admin Users',
+            'create' => 'New Admin User',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'first_name' => 'First name',
+            'last_name' => 'Last name',
+            'email' => 'Email',
+            'password' => 'Password',
+            'activated' => 'Activated',
+            'forbidden' => 'Forbidden',
+            'language' => 'Language',
+            
+        ],
+    ],
+
     // Do not delete me :) I'm used for auto-generation
 ];

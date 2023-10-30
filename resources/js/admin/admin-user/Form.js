@@ -16,4 +16,5 @@ Vue.component('admin-user-form', {
             }
         }
     }
+
 });

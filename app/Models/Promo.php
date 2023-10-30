@@ -11,7 +11,6 @@ class Promo extends Model
         'slug',
         'description',
         'image',
-        'promo',
         'published_at',
         'enabled',
     
