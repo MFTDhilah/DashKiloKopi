@@ -7,3 +7,4 @@ import './menu';
 import './promo';
 import './about';
 import './contact';
+import './kuisioner';

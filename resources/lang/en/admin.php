@@ -790,5 +790,27 @@ return [
         ],
     ],
 
+    'kuisioner' => [
+        'title' => 'Kuisioner',
+
+        'actions' => [
+            'index' => 'Kuisioner',
+            'create' => 'New Kuisioner',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'Nama' => 'Nama',
+            'Alamat' => 'Alamat',
+            'NoWa' => 'NoWa',
+            'Instagram' => 'Instagram',
+            'Petanyaan1' => 'Petanyaan1',
+            'Pertanyaan2' => 'Pertanyaan2',
+            'poto' => 'Poto',
+            
+        ],
+    ],
+
     // Do not delete me :) I'm used for auto-generation
 ];

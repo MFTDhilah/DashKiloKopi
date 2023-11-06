@@ -280,3 +280,19 @@ $factory->define(App\Models\AdminUser::class, static function (Faker\Generator $
         
     ];
 });
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\Kuisioner::class, static function (Faker\Generator $faker) {
+    return [
+        'Nama' => $faker->sentence,
+        'Alamat' => $faker->sentence,
+        'NoWa' => $faker->sentence,
+        'Instagram' => $faker->sentence,
+        'Petanyaan1' => $faker->sentence,
+        'Pertanyaan2' => $faker->sentence,
+        'poto' => $faker->sentence,
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
+        
+        
+    ];
+});
