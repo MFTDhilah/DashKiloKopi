@@ -8,3 +8,5 @@ import './promo';
 import './about';
 import './contact';
 import './kuisioner';
+import './questioner';
+import './question';

@@ -812,5 +812,58 @@ return [
         ],
     ],
 
+    'questioner' => [
+        'title' => 'Questioners',
+
+        'actions' => [
+            'index' => 'Questioners',
+            'create' => 'New Questioner',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            
+        ],
+    ],
+
+    'questioner' => [
+        'title' => 'Questioners',
+
+        'actions' => [
+            'index' => 'Questioners',
+            'create' => 'New Questioner',
+            'edit' => 'Edit :name',
+            'will_be_published' => 'Questioner will be published at',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'pertanyaan' => 'Pertanyaan',
+            'published_at' => 'Published at',
+            'enabled' => 'Enabled',
+            
+        ],
+    ],
+
+    'question' => [
+        'title' => 'Questions',
+
+        'actions' => [
+            'index' => 'Questions',
+            'create' => 'New Question',
+            'edit' => 'Edit :name',
+            'will_be_published' => 'Question will be published at',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'pertanyaan' => 'Pertanyaan',
+            'published_at' => 'Published at',
+            'enabled' => 'Enabled',
+            
+        ],
+    ],
+
     // Do not delete me :) I'm used for auto-generation
 ];

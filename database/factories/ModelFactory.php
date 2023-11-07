@@ -296,3 +296,34 @@ $factory->define(App\Models\Kuisioner::class, static function (Faker\Generator $
         
     ];
 });
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\Questioner::class, static function (Faker\Generator $faker) {
+    return [
+        
+        
+    ];
+});
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\Questioner::class, static function (Faker\Generator $faker) {
+    return [
+        'pertanyaan' => $faker->sentence,
+        'published_at' => $faker->date(),
+        'enabled' => $faker->boolean(),
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
+        
+        
+    ];
+});
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\Question::class, static function (Faker\Generator $faker) {
+    return [
+        'pertanyaan' => $faker->sentence,
+        'published_at' => $faker->date(),
+        'enabled' => $faker->boolean(),
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
+        
+        
+    ];
+});
