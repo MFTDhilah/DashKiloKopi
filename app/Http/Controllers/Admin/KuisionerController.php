@@ -37,10 +37,10 @@ class KuisionerController extends Controller
             $request,
 
             // set columns to query
-            ['id', 'Nama', 'Alamat', 'NoWa', 'Instagram', 'Petanyaan1', 'Pertanyaan2', 'poto'],
+            ['id', 'Nama', 'Alamat', 'NoWa', 'Instagram', 'Pertanyaan1', 'Pertanyaan2', 'poto'],
 
             // set columns to searchIn
-            ['id', 'Nama', 'Alamat', 'NoWa', 'Instagram', 'Petanyaan1', 'Pertanyaan2', 'poto']
+            ['id', 'Nama', 'Alamat', 'NoWa', 'Instagram', 'Pertanyaan1', 'Pertanyaan2', 'poto']
         );
 
         if ($request->ajax()) {

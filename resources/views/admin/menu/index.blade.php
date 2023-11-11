@@ -81,7 +81,15 @@
 
                                     <td>@{{ item.id }}</td>
                                         <td>@{{ item.title }}</td>
-                                        <td>@{{ item.image}}</td>
+                                        @if(isset($data))
+                                        @foreach($data as $data)
+                                        @if($data->image)
+                                        <td>
+                                            {!! $data->image !!}
+                                        </td>
+                                        @endif
+                                        @endforeach
+                                        @endif
                                         <td>@{{ item.price }}</td>
                                             <td class="text-center text-nowrap">
                                             <span v-if="item.published_at <= now">

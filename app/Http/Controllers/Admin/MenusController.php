@@ -37,7 +37,7 @@ class MenusController extends Controller
             $request,
 
             // set columns to query
-            ['id', 'title', 'price', 'published_at', 'enabled'],
+            ['id', 'title', 'price', 'image', 'published_at', 'enabled'],
 
             // set columns to searchIn
             ['id', 'title', 'slug', 'price', 'description', 'image']

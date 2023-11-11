@@ -84,10 +84,19 @@
                                         <td>@{{ item.Alamat }}</td>
                                         <td>@{{ item.NoWa }}</td>
                                         <td>@{{ item.Instagram }}</td>
-                                        <td>@{{ item.Petanyaan1 }}</td>
-                                        <td>@{{ item.Pertanyaan2 }}</td>
-                                        <td>@{{ item.poto }}</td>
-                                        
+                                        <td>@{{ item.Pertanyaan }}</td>
+                                        <td>
+                                        @if(isset($data))
+                                        @foreach($data as $data)
+                                        @if($data->poto)
+                                        <td>
+                                            {!! $data->poto !!}                      
+                                        </td>
+                                        @endif
+                                        @endforeach
+                                        @endif
+                                        </td>
+
                                         <td>
                                             <div class="row no-gutters">
                                                 <div class="col-auto">  
@@ -96,6 +105,7 @@
                                                 </form>
                                             </div>
                                         </td>
+
                                     </tr>
                                 </tbody>
                             </table>

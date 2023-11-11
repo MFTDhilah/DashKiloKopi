@@ -52,6 +52,7 @@
 
                                         <th is='sortable' :column="'id'">{{ trans('admin.promo.columns.id') }}</th>
                                         <th is='sortable' :column="'title'">{{ trans('admin.promo.columns.title') }}</th>
+                                        <th is='sortable' :column="'image'">{{ trans('admin.promo.columns.image') }}</th>
                                         <th is='sortable' :column="'description'">{{ trans('admin.promo.columns.description') }}</th>
                                         <th is='sortable' class="text-center" :column="'published_at'">{{ trans('admin.promo.columns.published_at') }}</th>
                                         <th is='sortable' :column="'enabled'">{{ trans('admin.promo.columns.enabled') }}</th>
@@ -80,6 +81,15 @@
 
                                     <td>@{{ item.id }}</td>
                                         <td>@{{ item.title }}</td>
+                                        @if(isset($data))
+                                        @foreach($data as $data)
+                                        @if($data->image)
+                                        <td>
+                                            {!! $data->image !!}
+                                        </td>
+                                        @endif
+                                        @endforeach
+                                        @endif
                                         <td>@{{ item.description }}</td>
                                             <td class="text-center text-nowrap">
                                             <span v-if="item.published_at <= now">
