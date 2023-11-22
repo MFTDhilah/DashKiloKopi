@@ -13,7 +13,7 @@
             inline-template>
 
             <form class="form-horizontal form-create" method="post" @submit.prevent="onSubmit" :action="action" novalidate>
-                
+            @csrf 
                 <div class="row">
                     <div class="col">
                         <div class="card">
@@ -26,9 +26,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-12 col-lg-12 col-xl-5 col-xxl-4">
-                        @include('admin.menu.components.form-elements-right')
-                    </div>
+                    
                 </div>
                                 
                 <button type="submit" class="btn btn-primary fixed-cta-button button-save" :disabled="submiting">

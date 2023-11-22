@@ -25,7 +25,7 @@ class IndexPromo extends FormRequest
     public function rules(): array
     {
         return [
-            'orderBy' => 'in:id,title,description,image,promo,published_at,enabled|nullable',
+            'orderBy' => 'in:id,title,description,image,published_at,enabled|nullable',
             'orderDirection' => 'in:asc,desc|nullable',
             'search' => 'string|nullable',
             'page' => 'integer|nullable',

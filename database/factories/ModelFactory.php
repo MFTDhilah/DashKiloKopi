@@ -327,3 +327,18 @@ $factory->define(App\Models\Question::class, static function (Faker\Generator $f
         
     ];
 });
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\Promo::class, static function (Faker\Generator $faker) {
+    return [
+        'title' => $faker->sentence,
+        'slug' => $faker->unique()->slug,
+        'description' => $faker->sentence,
+        'image' => $faker->sentence,
+        'published_at' => $faker->date(),
+        'enabled' => $faker->boolean(),
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
+        
+        
+    ];
+});

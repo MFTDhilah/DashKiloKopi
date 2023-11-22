@@ -86,6 +86,14 @@ class MenusController extends Controller
             return ['redirect' => url('admin/menus'), 'message' => trans('brackets/admin-ui::admin.operation.succeeded')];
         }
 
+        if($request->file('image')){
+            $path = $request->file('image')->getRealPath();
+            $image = file_get_contents($path);
+            $poto = base64_encode($image);
+            $menu->image = $poto;
+        }
+        $menu->save(); 
+
         return redirect('admin/menus');
     }
 
@@ -101,6 +109,10 @@ class MenusController extends Controller
         $this->authorize('admin.menu.show', $menu);
 
         // TODO your code goes here
+        return view('admin.menu.show', [
+            'menu' => $menu,
+        ]);
+    
     }
 
     /**

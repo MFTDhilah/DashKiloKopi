@@ -4011,8 +4011,7 @@ figure {
 img {
   vertical-align: middle;
   border-style: none;
-  max-width: 100px;
-  max-height: 100px;
+  max-width: 60%;
 }
 
 svg {
@@ -20073,4 +20072,9 @@ div.trumbowyg-dropdown-table table td.active {
   .input-group button {
     font-size: 0.875rem !important;
   }
+}
+
+.card .row img{
+  height : 200px;
+  width: auto;
 }

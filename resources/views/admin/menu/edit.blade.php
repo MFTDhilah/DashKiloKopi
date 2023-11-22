@@ -13,7 +13,7 @@
                 inline-template>
             
                 <form class="form-horizontal form-edit" method="post" @submit.prevent="onSubmit" :action="action" novalidate>
-
+                @csrf
                     <div class="row">
                         <div class="col">
                             <div class="card">

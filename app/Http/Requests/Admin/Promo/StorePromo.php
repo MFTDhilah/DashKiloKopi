@@ -30,7 +30,6 @@ class StorePromo extends FormRequest
             'slug' => ['required', Rule::unique('promos', 'slug'), 'string'],
             'description' => ['required', 'string'],
             'image' => ['required', 'string'],
-            'promo' => ['required', 'string'],
             'published_at' => ['nullable', 'date'],
             'enabled' => ['required', 'boolean'],
             

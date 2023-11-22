@@ -37,10 +37,10 @@ class KuisionerController extends Controller
             $request,
 
             // set columns to query
-            ['id', 'Nama', 'Alamat', 'NoWa', 'Instagram', 'Pertanyaan1', 'Pertanyaan2', 'poto'],
+            ['id', 'Nama', 'Alamat', 'NoWa', 'Instagram', 'Jawaban', 'poto'],
 
             // set columns to searchIn
-            ['id', 'Nama', 'Alamat', 'NoWa', 'Instagram', 'Pertanyaan1', 'Pertanyaan2', 'poto']
+            ['id', 'Nama', 'Alamat', 'NoWa', 'Instagram', 'Jawaban', 'poto']
         );
 
         if ($request->ajax()) {
@@ -101,6 +101,9 @@ class KuisionerController extends Controller
         $this->authorize('admin.kuisioner.show', $kuisioner);
 
         // TODO your code goes here
+        return view('admin.kuisioner.show', [
+            'kuisioner' => $kuisioner,
+        ]);
     }
 
     /**

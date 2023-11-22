@@ -14,6 +14,7 @@
                 <div class="card">
                     <div class="card-header">
                         <i class="fa fa-align-justify"></i> {{ trans('admin.kuisioner.actions.index') }}
+                        
                     </div>
                     <div class="card-body" v-cloak>
                         <div class="card-block">
@@ -53,9 +54,7 @@
                                         <th is='sortable' :column="'Alamat'">{{ trans('admin.kuisioner.columns.Alamat') }}</th>
                                         <th is='sortable' :column="'NoWa'">{{ trans('admin.kuisioner.columns.NoWa') }}</th>
                                         <th is='sortable' :column="'Instagram'">{{ trans('admin.kuisioner.columns.Instagram') }}</th>
-                                        <th is='sortable' :column="'Petanyaan1'">{{ trans('admin.kuisioner.columns.Petanyaan1') }}</th>
-                                        <th is='sortable' :column="'Pertanyaan2'">{{ trans('admin.kuisioner.columns.Pertanyaan2') }}</th>
-                                        <th is='sortable' :column="'poto'">{{ trans('admin.kuisioner.columns.poto') }}</th>
+                                        <th is='sortable' :column="'Jawaban'">Jawaban</th>
 
                                         <th></th>
                                     </tr>
@@ -84,22 +83,14 @@
                                         <td>@{{ item.Alamat }}</td>
                                         <td>@{{ item.NoWa }}</td>
                                         <td>@{{ item.Instagram }}</td>
-                                        <td>@{{ item.Pertanyaan }}</td>
-                                        <td>
-                                        @if(isset($data))
-                                        @foreach($data as $data)
-                                        @if($data->poto)
-                                        <td>
-                                            {!! $data->poto !!}                      
-                                        </td>
-                                        @endif
-                                        @endforeach
-                                        @endif
-                                        </td>
-
+                                        <td>@{{ item.Jawaban }}</td>
                                         <td>
                                             <div class="row no-gutters">
-                                                <div class="col-auto">  
+                                                <div class="col-auto">
+                                                    
+                                                    <a class="btn btn-sm btn-spinner btn-warning" :href="item.resource_url + '/show'" title="Show" role="button"><i class="fa fa-eye"></i></a>
+                                                    
+                                                </div>
                                                 <form class="col" @submit.prevent="deleteItem(item.resource_url)">
                                                     <button type="submit" class="btn btn-sm btn-danger" title="{{ trans('brackets/admin-ui::admin.btn.delete') }}"><i class="fa fa-trash-o"></i></button>
                                                 </form>

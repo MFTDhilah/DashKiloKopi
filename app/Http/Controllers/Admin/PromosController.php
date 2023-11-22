@@ -40,7 +40,7 @@ class PromosController extends Controller
             ['id', 'title', 'description', 'image', 'published_at', 'enabled'],
 
             // set columns to searchIn
-            ['id', 'title', 'slug', 'description', 'image']
+            ['id', 'title', 'slug', 'description']
         );
 
         if ($request->ajax()) {
@@ -101,6 +101,10 @@ class PromosController extends Controller
         $this->authorize('admin.promo.show', $promo);
 
         // TODO your code goes here
+        return view('admin.promo.show', [
+            'promo' => $promo,
+        ]);
+    
     }
 
     /**

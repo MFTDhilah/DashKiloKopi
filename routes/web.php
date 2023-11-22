@@ -126,69 +126,10 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
             Route::get('/create',                                       'MenusController@create')->name('create');
             Route::post('/',                                            'MenusController@store')->name('store');
             Route::get('/{menu}/edit',                                  'MenusController@edit')->name('edit');
+            Route::get('/{menu}/show',                                  'MenusController@show')->name('view');
             Route::post('/bulk-destroy',                                'MenusController@bulkDestroy')->name('bulk-destroy');
             Route::post('/{menu}',                                      'MenusController@update')->name('update');
             Route::delete('/{menu}',                                    'MenusController@destroy')->name('destroy');
-        });
-    });
-});
-
-/* Auto-generated admin routes */
-Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
-    Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function() {
-        Route::prefix('promos')->name('promos/')->group(static function() {
-            Route::get('/',                                             'PromosController@index')->name('index');
-            Route::get('/create',                                       'PromosController@create')->name('create');
-            Route::post('/',                                            'PromosController@store')->name('store');
-            Route::get('/{promo}/edit',                                 'PromosController@edit')->name('edit');
-            Route::post('/bulk-destroy',                                'PromosController@bulkDestroy')->name('bulk-destroy');
-            Route::post('/{promo}',                                     'PromosController@update')->name('update');
-            Route::delete('/{promo}',                                   'PromosController@destroy')->name('destroy');
-        });
-    });
-});
-
-/* Auto-generated admin routes */
-Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
-    Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function() {
-        Route::prefix('media')->name('media/')->group(static function() {
-            Route::get('/',                                             'MediaController@index')->name('index');
-            Route::get('/create',                                       'MediaController@create')->name('create');
-            Route::post('/',                                            'MediaController@store')->name('store');
-            Route::get('/{medium}/edit',                                'MediaController@edit')->name('edit');
-            Route::post('/bulk-destroy',                                'MediaController@bulkDestroy')->name('bulk-destroy');
-            Route::post('/{medium}',                                    'MediaController@update')->name('update');
-            Route::delete('/{medium}',                                  'MediaController@destroy')->name('destroy');
-        });
-    });
-});
-
-/* Auto-generated admin routes */
-Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
-    Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function() {
-        Route::prefix('images')->name('images/')->group(static function() {
-            Route::get('/',                                             'ImageController@index')->name('index');
-            Route::get('/create',                                       'ImageController@create')->name('create');
-            Route::post('/',                                            'ImageController@store')->name('store');
-            Route::get('/{image}/edit',                                 'ImageController@edit')->name('edit');
-            Route::post('/bulk-destroy',                                'ImageController@bulkDestroy')->name('bulk-destroy');
-            Route::post('/{image}',                                     'ImageController@update')->name('update');
-            Route::delete('/{image}',                                   'ImageController@destroy')->name('destroy');
-        });
-    });
-});
-
-/* Auto-generated admin routes */
-Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
-    Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function() {
-        Route::prefix('posts')->name('posts/')->group(static function() {
-            Route::get('/',                                             'PostsController@index')->name('index');
-            Route::get('/create',                                       'PostsController@create')->name('create');
-            Route::post('/',                                            'PostsController@store')->name('store');
-            Route::get('/{post}/edit',                                  'PostsController@edit')->name('edit');
-            Route::post('/bulk-destroy',                                'PostsController@bulkDestroy')->name('bulk-destroy');
-            Route::post('/{post}',                                      'PostsController@update')->name('update');
-            Route::delete('/{post}',                                    'PostsController@destroy')->name('destroy');
         });
     });
 });
@@ -228,6 +169,7 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
     Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function() {
         Route::prefix('kuisioners')->name('kuisioners/')->group(static function() {
             Route::get('/',                                             'KuisionerController@index')->name('index');
+            Route::get('/{kuisioner}/show',                             'KuisionerController@show')->name('view');
             Route::post('/bulk-destroy',                                'KuisionerController@bulkDestroy')->name('bulk-destroy');
             Route::delete('/{kuisioner}',                               'KuisionerController@destroy')->name('destroy');
         });
@@ -245,6 +187,23 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
             Route::post('/bulk-destroy',                                'QuestionsController@bulkDestroy')->name('bulk-destroy');
             Route::post('/{question}',                                  'QuestionsController@update')->name('update');
             Route::delete('/{question}',                                'QuestionsController@destroy')->name('destroy');
+        });
+    });
+});
+
+/* Auto-generated admin routes */
+Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
+    Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function() {
+        Route::prefix('promos')->name('promos/')->group(static function() {
+            Route::get('/',                                             'PromosController@index')->name('index');
+            Route::get('/create',                                       'PromosController@create')->name('create');
+            Route::post('/',                                            'PromosController@store')->name('store');
+            Route::get('view/{slug}',                                   'PromosController@show')->name('view');
+            Route::get('/{promo}/edit',                                 'PromosController@edit')->name('edit');
+            Route::get('/{promo}/show',                                 'PromosController@show')->name('view');
+            Route::post('/bulk-destroy',                                'PromosController@bulkDestroy')->name('bulk-destroy');
+            Route::post('/{promo}',                                     'PromosController@update')->name('update');
+            Route::delete('/{promo}',                                   'PromosController@destroy')->name('destroy');
         });
     });
 });

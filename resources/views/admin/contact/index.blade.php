@@ -54,7 +54,6 @@
                                         <th is='sortable' :column="'telepon'">{{ trans('admin.contact.columns.telepon') }}</th>
                                         <th is='sortable' :column="'alamat'">{{ trans('admin.contact.columns.alamat') }}</th>
                                         <th is='sortable' :column="'jam_operasional'">{{ trans('admin.contact.columns.jam_operasional') }}</th>
-                                        <th is='sortable' class="text-center" :column="'published_at'">{{ trans('admin.contact.columns.published_at') }}</th>
                                         <th is='sortable' :column="'enabled'">{{ trans('admin.contact.columns.enabled') }}</th>
 
                                         <th></th>
@@ -83,30 +82,7 @@
                                         <td>@{{ item.telepon }}</td>
                                         <td>@{{ item.alamat }}</td>
                                         <td>@{{ item.jam_operasional }}</td>
-                                            <td class="text-center text-nowrap">
-                                            <span v-if="item.published_at <= now">
-                                                @{{ item.published_at | datetime('DD.MM.YYYY, HH:mm') }}
-                                            </span>
-                                                <span v-if="item.published_at > now">
-                                                <small>{{ trans('admin.contact.actions.will_be_published') }}</small><br />
-                                                @{{ item.published_at | datetime('DD.MM.YYYY, HH:mm') }}
-                                                <span class="cursor-pointer" @click="publishLater(item.resource_url, collection[index], 'publishLaterDialog')" title="{{ trans('brackets/admin-ui::admin.operation.publish_later') }}" role="button"><i class="fa fa-calendar"></i></span>
-                                            </span>
-                                            <div v-if="!item.published_at">
-                                                <span class="btn btn-sm btn-info text-white mb-1" @click="publishLater(item.resource_url, collection[index], 'publishLaterDialog')" title="{{ trans('brackets/admin-ui::admin.operation.publish_later') }}" role="button"><i class="fa fa-calendar"></i>&nbsp;&nbsp;{{ trans('brackets/admin-ui::admin.operation.publish_later') }}</span>
-                                            </div>
-                                            <div v-if="!item.published_at || item.published_at > now">
-                                                <form class="d-inline" @submit.prevent="publishNow(item.resource_url, collection[index], 'publishNowDialog')">
-                                                    <button type="submit" class="btn btn-sm btn-success text-white" title="{{ trans('brackets/admin-ui::admin.operation.publish_now') }}"><i class="fa fa-send"></i>&nbsp;&nbsp;{{ trans('brackets/admin-ui::admin.operation.publish_now') }}</button>
-                                                </form>
-                                            </div>
-                                            <div v-if="item.published_at && item.published_at < now">
-                                                <form class="d-inline" @submit.prevent="unpublishNow(item.resource_url, collection[index])">
-                                                    <button type="submit" class="btn btn-sm btn-danger" title="{{ trans('brackets/admin-ui::admin.operation.unpublish_now') }}"><i class="fa fa-send"></i>&nbsp;&nbsp;{{ trans('brackets/admin-ui::admin.operation.unpublish_now') }}</button>
-                                                </form>
-                                            </div>
-                                        </td>
-                                        
+                                                                                    
                                         <td>
                                             <label class="switch switch-3d switch-success">
                                                 <input type="checkbox" class="switch-input" v-model="collection[index].enabled" @change="toggleSwitch(item.resource_url, 'enabled', collection[index])">

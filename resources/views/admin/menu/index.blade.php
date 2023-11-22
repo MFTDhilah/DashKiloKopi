@@ -52,9 +52,7 @@
 
                                         <th is='sortable' :column="'id'">{{ trans('admin.menu.columns.id') }}</th>
                                         <th is='sortable' :column="'title'">{{ trans('admin.menu.columns.title') }}</th>
-                                        <th is='sortable' :column="'image'">{{ trans('admin.menu.columns.image') }}</th>
                                         <th is='sortable' :column="'price'">{{ trans('admin.menu.columns.price') }}</th>
-                                        <th is='sortable' class="text-center" :column="'published_at'">{{ trans('admin.menu.columns.published_at') }}</th>
                                         <th is='sortable' :column="'enabled'">{{ trans('admin.menu.columns.enabled') }}</th>
 
                                         <th></th>
@@ -81,40 +79,8 @@
 
                                     <td>@{{ item.id }}</td>
                                         <td>@{{ item.title }}</td>
-                                        @if(isset($data))
-                                        @foreach($data as $data)
-                                        @if($data->image)
-                                        <td>
-                                            {!! $data->image !!}
-                                        </td>
-                                        @endif
-                                        @endforeach
-                                        @endif
                                         <td>@{{ item.price }}</td>
-                                            <td class="text-center text-nowrap">
-                                            <span v-if="item.published_at <= now">
-                                                @{{ item.published_at | datetime('DD.MM.YYYY, HH:mm') }}
-                                            </span>
-                                                <span v-if="item.published_at > now">
-                                                <small>{{ trans('admin.menu.actions.will_be_published') }}</small><br />
-                                                @{{ item.published_at | datetime('DD.MM.YYYY, HH:mm') }}
-                                                <span class="cursor-pointer" @click="publishLater(item.resource_url, collection[index], 'publishLaterDialog')" title="{{ trans('brackets/admin-ui::admin.operation.publish_later') }}" role="button"><i class="fa fa-calendar"></i></span>
-                                            </span>
-                                            <div v-if="!item.published_at">
-                                                <span class="btn btn-sm btn-info text-white mb-1" @click="publishLater(item.resource_url, collection[index], 'publishLaterDialog')" title="{{ trans('brackets/admin-ui::admin.operation.publish_later') }}" role="button"><i class="fa fa-calendar"></i>&nbsp;&nbsp;{{ trans('brackets/admin-ui::admin.operation.publish_later') }}</span>
-                                            </div>
-                                            <div v-if="!item.published_at || item.published_at > now">
-                                                <form class="d-inline" @submit.prevent="publishNow(item.resource_url, collection[index], 'publishNowDialog')">
-                                                    <button type="submit" class="btn btn-sm btn-success text-white" title="{{ trans('brackets/admin-ui::admin.operation.publish_now') }}"><i class="fa fa-send"></i>&nbsp;&nbsp;{{ trans('brackets/admin-ui::admin.operation.publish_now') }}</button>
-                                                </form>
-                                            </div>
-                                            <div v-if="item.published_at && item.published_at < now">
-                                                <form class="d-inline" @submit.prevent="unpublishNow(item.resource_url, collection[index])">
-                                                    <button type="submit" class="btn btn-sm btn-danger" title="{{ trans('brackets/admin-ui::admin.operation.unpublish_now') }}"><i class="fa fa-send"></i>&nbsp;&nbsp;{{ trans('brackets/admin-ui::admin.operation.unpublish_now') }}</button>
-                                                </form>
-                                            </div>
-                                        </td>
-                                        
+                                                                                
                                         <td>
                                             <label class="switch switch-3d switch-success">
                                                 <input type="checkbox" class="switch-input" v-model="collection[index].enabled" @change="toggleSwitch(item.resource_url, 'enabled', collection[index])">
@@ -126,7 +92,10 @@
                                         <td>
                                             <div class="row no-gutters">
                                                 <div class="col-auto">
+                                                    
+                                                    <a class="btn btn-sm btn-spinner btn-warning" :href="item.resource_url + '/show'" title="Show" role="button"><i class="fa fa-eye"></i></a>
                                                     <a class="btn btn-sm btn-spinner btn-info" :href="item.resource_url + '/edit'" title="{{ trans('brackets/admin-ui::admin.btn.edit') }}" role="button"><i class="fa fa-edit"></i></a>
+                                                    
                                                 </div>
                                                 <form class="col" @submit.prevent="deleteItem(item.resource_url)">
                                                     <button type="submit" class="btn btn-sm btn-danger" title="{{ trans('brackets/admin-ui::admin.btn.delete') }}"><i class="fa fa-trash-o"></i></button>

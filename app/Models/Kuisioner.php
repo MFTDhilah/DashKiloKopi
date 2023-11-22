@@ -13,8 +13,7 @@ class Kuisioner extends Model
         'Alamat',
         'NoWa',
         'Instagram',
-        'Petanyaan1',
-        'Pertanyaan2',
+        'Jawaban',
         'poto',
     
     ];

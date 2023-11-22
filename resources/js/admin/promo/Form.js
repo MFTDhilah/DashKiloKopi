@@ -9,7 +9,6 @@ Vue.component('promo-form', {
                 slug:  '' ,
                 description:  '' ,
                 image:  '' ,
-                promo:  '' ,
                 published_at:  '' ,
                 enabled:  false ,
                 

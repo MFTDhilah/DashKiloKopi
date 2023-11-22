@@ -31,7 +31,6 @@ class UpdatePromo extends FormRequest
             'slug' => ['sometimes', Rule::unique('promos', 'slug')->ignore($this->promo->getKey(), $this->promo->getKeyName()), 'string'],
             'description' => ['sometimes', 'string'],
             'image' => ['sometimes', 'string'],
-            'promo' => ['sometimes', 'string'],
             'published_at' => ['nullable', 'date'],
             'enabled' => ['sometimes', 'boolean'],
             'publish_now' => ['nullable', 'boolean'],

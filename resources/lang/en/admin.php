@@ -865,5 +865,27 @@ return [
         ],
     ],
 
+    'promo' => [
+        'title' => 'Promos',
+
+        'actions' => [
+            'index' => 'Promos',
+            'create' => 'New Promo',
+            'edit' => 'Edit :name',
+            'will_be_published' => 'Promo will be published at',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'title' => 'Title',
+            'slug' => 'Slug',
+            'description' => 'Description',
+            'image' => 'Image',
+            'published_at' => 'Published at',
+            'enabled' => 'Enabled',
+            
+        ],
+    ],
+
     // Do not delete me :) I'm used for auto-generation
 ];

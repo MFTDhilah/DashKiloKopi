@@ -13,7 +13,7 @@
             inline-template>
 
             <form class="form-horizontal form-create" method="post" @submit.prevent="onSubmit" :action="action" novalidate>
-                
+            @csrf
                 <div class="row">
                     <div class="col">
                         <div class="card">
@@ -24,10 +24,6 @@
                                 @include('admin.about.components.form-elements')
                             </div>
                         </div>
-                    </div>
-
-                    <div class="col-md-12 col-lg-12 col-xl-5 col-xxl-4">
-                        @include('admin.about.components.form-elements-right')
                     </div>
                 </div>
                                 
