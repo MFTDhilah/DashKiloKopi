@@ -26,9 +26,6 @@
                             </div>
                         </div>
 
-                        <div class="col-md-12 col-lg-12 col-xl-5 col-xxl-4">
-                            @include('admin.question.components.form-elements-right', ['showHistory' => true])
-                        </div>
                     </div>
                     
                     <button type="submit" class="btn btn-primary fixed-cta-button button-save" :disabled="submiting">
